@@ -5,7 +5,7 @@
 2. 성능 극대화를 위해 웹서버에서 static resource 를 바라볼 수 있도록 WAR 압축을 플어주고 싶을 경우
 
 ```
-# War 또는 Jar 압축 해제
+-- War 또는 Jar 압축 해제
 
 $ mkdir $SOURCE
 $ cp demo-springboot-0.0.1-SNAPSHOT.war $SOURCE
