@@ -16,13 +16,13 @@ Beans는 애플리케이션의 핵심을 이루는 객체이며, Spring IoC(Inve
 하나의 Bean 정의에 대해서 다수의 객체가 존재 할 수 있다.
 
 
-**request**  @Scope(value = WebApplicationContext.SCOPE_REQUEST)  
+**request**  @RequestScope
 하나의 Bean 정의에 대해서 하나의 HTTP request 의 생명주기 안에 단 하나의 객체만 존재.
 즉, 각각의 HTTP request 는 자신만의 객체를 가진다.
 Web-aware Spring ApplicationContext 안에서만 유효
 
 
-**session**  @Scope(value = WebApplicationContext.SCOPE_SESSION)   
+**session**  @SessionScope
 하나의 Bean 정의에 대해서 하나의 HTTP Session 의 생명주기에 안에 단 하나의 객체만 존재.
 Web-aware Spring ApplicationContext 안에서만 유효
 
@@ -32,6 +32,13 @@ Web-aware Spring ApplicationContext 안에서만 유효
 일반적으로 portlet context 안에서 유효.
 Web-aware Spring ApplicationContext 안에서만 유효
 
+**application** @ApplicationScope
+Spring 컨테이너는 전체 웹 응용 프로그램에 대해 한 번 appPreferences bean 정의를 사용하여 appPreferences bean의 새 인스턴스를 만든다.
+즉, appPreferences 콩은 일반의 ServletContext 속성으로 저장하는 ServletContext 수준에서 범위가있다. 
+이것은 싱글톤 bean과 다소 비슷하지만 중요한 두 가지가 다르다
+이것은 ServletContext 마다 싱글톤이지만, 스프링 ApplicationContext 마다는 아니고(또는 특정 웹 응용 프로그램에서 여러 가지가있을 수 있다) 실제로 노출되는 것은 ServletContext 의 속성에 따라 볼 수 있다.
+
 
 ### 참고
+* https://docs.spring.io/spring/docs/5.2.7.RELEASE/spring-framework-reference/core.html#beans-factory-scopes-application
 * https://gmlwjd9405.github.io/2018/11/10/spring-beans.html
