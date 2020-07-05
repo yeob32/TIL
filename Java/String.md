@@ -8,7 +8,7 @@ String a = "a"; // 이렇게 선언 시 Heap Area의 Permanent area에 String Po
 String Pool에 등록되면 프로세스가 종료될때까지 계속 유지.
 String은 사용 될 때 먼저 String Pool에 등록되있는지 체크하고 처음 등록된 것을 사용.
 
-**new String**
+**new String**  
 String a = new String("a"); // 다른 객체 생성과 마찬가지 만들때마다 새로운 메모리에 올라가게 됨.
 
 ```
@@ -37,11 +37,11 @@ public static int hashCode(byte[] value) {
     }
 ```
 
-**System.identityHashCode()**
+**System.identityHashCode()**  
 System 클래스의 identityHashCode()메서드로 객체가 메모리에서 가진 해쉬 주소값을 출력한다. 특별한 설정을 더하지 않았을 경우 .hashCode()와 동일한 값을 나타낸다.
 즉 이게 OS(System)에서 가지는 해쉬값이다.
 
-**.hashCode()**
+**.hashCode()**  
 Object에 있는 .hashCode()메서드로 객체가 메모리에서 가진 해쉬 주소값을 출력한다. 특별한 설정을 더하지 않았을 경우 System.identityHashCode()와 동일한 값을 나타낸다.
 즉, 이게 Java(Application)에서 가지는 해쉬값이다.
 
