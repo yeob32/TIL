@@ -1,6 +1,6 @@
 # Spring Bean
 
-Beans는 애플리케이션의 핵심을 이루는 객체이며, Spring IoC(Inversion of Control) 컨테이너에 의해 인스턴스화, 관리, 생성된다.
+> Beans는 애플리케이션의 핵심을 이루는 객체이며, Spring IoC(Inversion of Control) 컨테이너에 의해 인스턴스화, 관리, 생성된다.
 
 
 ### Scope
@@ -12,7 +12,7 @@ Beans는 애플리케이션의 핵심을 이루는 객체이며, Spring IoC(Inve
 하나의 Bean 정의에 대해서 Spring IoC Container 내에 단 하나의 객체만 존재.
 
 
-**prototype** @Scope("prototype")    
+**prototype** @Scope(value = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)    
 하나의 Bean 정의에 대해서 다수의 객체가 존재 할 수 있다.
 
 
@@ -38,6 +38,8 @@ Spring 컨테이너는 전체 웹 응용 프로그램에 대해 한 번 appPrefe
 이것은 싱글톤 bean과 다소 비슷하지만 중요한 두 가지가 다르다
 이것은 ServletContext 마다 싱글톤이지만, 스프링 ApplicationContext 마다는 아니고(또는 특정 웹 응용 프로그램에서 여러 가지가있을 수 있다) 실제로 노출되는 것은 ServletContext 의 속성에 따라 볼 수 있다.
 
+### proxyMode
+> 해당 객체를 참조하는 싱글톤 객체들은 프록시 객체를 주입 받음.
 
 ### 참고
 * https://docs.spring.io/spring/docs/5.2.7.RELEASE/spring-framework-reference/core.html#beans-factory-scopes-application
