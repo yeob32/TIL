@@ -33,7 +33,7 @@ Web-aware Spring ApplicationContext 안에서만 유효
 일반적으로 portlet context 안에서 유효.
 Web-aware Spring ApplicationContext 안에서만 유효
 
-**application** @ApplicationScope
+**application** @ApplicationScope   
 Spring 컨테이너는 전체 웹 응용 프로그램에 대해 한 번 appPreferences bean 정의를 사용하여 appPreferences bean의 새 인스턴스를 만든다.
 즉, appPreferences 콩은 일반의 ServletContext 속성으로 저장하는 ServletContext 수준에서 범위가있다. 
 이것은 싱글톤 bean과 다소 비슷하지만 중요한 두 가지가 다르다
