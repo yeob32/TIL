@@ -40,7 +40,7 @@ Spring 컨테이너는 전체 웹 응용 프로그램에 대해 한 번 appPrefe
 이것은 ServletContext 마다 싱글톤이지만, 스프링 ApplicationContext 마다는 아니고(또는 특정 웹 응용 프로그램에서 여러 가지가있을 수 있다) 실제로 노출되는 것은 ServletContext 의 속성에 따라 볼 수 있다.
 
 ### proxyMode
-> 해당 객체를 참조하는 싱글톤 객체들은 프록시 객체를 주입 받음.
+- 해당 객체를 참조하는 싱글톤 객체들은 프록시 객체를 주입 받음.
 
 ### 참고
 * https://docs.spring.io/spring/docs/5.2.7.RELEASE/spring-framework-reference/core.html#beans-factory-scopes-application
