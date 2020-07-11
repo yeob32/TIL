@@ -8,24 +8,22 @@
 * 구체적으로는 애플리케이션 구동 시 JVM 안에서 스프링이 bean마다 하나의 객체를 생성하는 것을 의미한다.
 * request, session, global session의 Scope는 일반 Spring 어플리케이션이 아닌, Spring MVC Web Application에서만 사용된다.
 
-| Scope | Description |
 
-
-**singleton**  
+**singleton**   
 하나의 Bean 정의에 대해서 Spring IoC Container 내에 단 하나의 객체만 존재.
 
 
-**prototype** @Scope(value = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)    
+**prototype** @Scope(value = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)   
 하나의 Bean 정의에 대해서 다수의 객체가 존재 할 수 있다.
 
 
-**request**  @RequestScope
+**request**  @RequestScope   
 하나의 Bean 정의에 대해서 하나의 HTTP request 의 생명주기 안에 단 하나의 객체만 존재.
 즉, 각각의 HTTP request 는 자신만의 객체를 가진다.
 Web-aware Spring ApplicationContext 안에서만 유효
 
 
-**session**  @SessionScope
+**session**  @SessionScope   
 하나의 Bean 정의에 대해서 하나의 HTTP Session 의 생명주기에 안에 단 하나의 객체만 존재.
 Web-aware Spring ApplicationContext 안에서만 유효
 
