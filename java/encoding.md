@@ -20,8 +20,11 @@
 
 ### Unicode
 - 모든 문자를 하나의 통일된 문자집합 ( Character set )으로 표현하기 위해 만든 코드
-
-
+- UTF-8, UTF-16 등
+  - UTF-8: 한글 3byte, 영어,숫자 1byte, 문자 크기가 달라서 다루기 어려움 (가변크기)
+  - UTF-16: 1byte로 표현되는 영어, 숫자가 2byte 고정크기로 표현되어 용량이 커지는 단점
+  > 인터넷 통신시 전송속도 중요해 문서의 크기가 작을수록 유리
+  
 ### 참고
 - https://whatisthenext.tistory.com/103
 - https://lovefor-you.tistory.com/173
