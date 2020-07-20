@@ -5,4 +5,5 @@
 ```
 $ telnet www.naver.com 80
 $ GET / HTTP/1.1
+$ POST / HTTP/1.1
 ```
