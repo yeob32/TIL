@@ -1,9 +1,10 @@
 # Data Types
 
-
 ## Primitive Data Types
 ### Default Values
+
 | Data Type | Bits | Scope | Default Value ( for fields ) |
+|:---:|:---:|:---:|:---:|
 | `byte` | 8bits | -2^7 ~ 2^7-1 (-128 ~ 127) | 0 |
 | `short` | 16bits | -2^15 ~ 2^15-1 (-32,768 ~ 32,767) | 0 |
 | `int` | 32bits | -2^31 ~ 2^31-1 (-2,147,483,648 ~ 2,147,483,647) | 0 |
