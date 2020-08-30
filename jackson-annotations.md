@@ -297,3 +297,6 @@ public class MyBean {
 // after
 
 ```
+
+## References
+- https://www.baeldung.com/jackson-annotations
