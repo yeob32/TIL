@@ -15,6 +15,7 @@
 
 ## JVM
 ![jvm](http://coding-geek.com/wp-content/uploads/2015/04/jvm_overview.jpg)
+![jvm2](https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/images/gcslides/Slide1.png)
 
 ## JVM 구성 요소
 - Class Loader
@@ -69,4 +70,5 @@
 
 
 ## References
+- https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html
 - http://coding-geek.com/jvm-memory-model/
