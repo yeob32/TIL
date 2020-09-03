@@ -1,4 +1,6 @@
-### MySql 구조
+# MySql
+
+## MySql 구조
 * 서버 엔진 : 클라이언트(또는 사용자)가 Query를 요청했을때, Query Parsing과, 스토리지 엔진에 데이터를 요청하는 작업을 수행.                                      
 * 스토리지 엔진 : 물리적 저장장치에서 데이터를 읽어오는 역할을 담당.
 
@@ -21,6 +23,11 @@ InnoDB는 기본적으로 row-level locking 제공하며, 또한 데이터를 cl
 * 전문 검색 필요 시
 * 트랜잭션 및 복구 x
 * 한번에 대량의 데이터를 입력하는 배치성 테이블
+
+## trouble
+- public key retrieval is not allowed
+    - allowPublicKeyRetrieval=true&useSSL=false
+    - mysql 8.x 버전 이후로 발생
 
 ### 참고
 * http://asuraiv.blogspot.com/2017/07/mysql-storage-engine.html

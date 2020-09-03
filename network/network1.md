@@ -10,7 +10,7 @@
 ### TCP / UDP (Transport Layer)
 > 데이터 전송 프로토콜
 
-* TCP (Transmission Control Protocol)  
+* TCP (Transmission Control Protocol)
     - 연결형 서비스로 가상 회선 방식(패킷 교환) 사용
     - 3-way handshaking 과정을 통해 연결을 설정하고 4-way handshaking을 통해 해제
     - 높은 신뢰성(흐름 제어, 혼잡 제어)
