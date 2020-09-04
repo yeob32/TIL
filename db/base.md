@@ -1,5 +1,44 @@
+
+## 정규화
+- 정규화 -> 컬럼 분리 (인덱스 분리) -> 옵티마이저 최적화
+
+### 외래키 (FK)
+fk 걸면 부모 테이블 키 값 수정 또는 로우 삭제 시 에러 발생
+cascade 걸어주면 삭제 가능
+
     
 ## Index
+인덱스 생성 시 키 순서 -> 카디널리티가 높은 순으로 (ex 주민등록번호)
+ex) idx(id, name, etc)
+위의 인덱스로 검색 시 첫번째 키는 검색 조건에 꼭 들어가야 인덱스 탐
+
+검색 시 유의사항
+- 인덱스 컬럼의 값을 수정해서 검색하지 않기
+    - ex) where price*10 = 1000;
+- null 은 인덱스 안탐
+- 자동 형변환을 지원하나, 정확한 데이터 타입으로 검색하기
+
+### Index Scan
+- Range Scan
+	- 단일 건이 아닌 범위 검색, 검색 결과가 여러건 
+- Full Scan
+    - 인덱스를 사용하지 않고 테이블 데이터를 처음부터 끝까지 읽어서 요청 작업을 처리
+	    - 발생 조건
+		    - 테이블의 레코드 건수가 적어서 인덱스를 통해 읽는것보다 직접 테이블을 읽는것이 더 빠르다고 판된될때
+		    - 인덱스 레인지스캔을 사용할 수 있는 쿼리라 하더라도 옵티마이저가 판단한 조건 일치 레코드 건수가 너무 많은 경우
+		    - WHERE절이나 ON절에 사용할 수 있는 인덱스가 없을 경우	
+
+## B-Tree 인덱스
+![B-Tree](https://cdn-images-1.medium.com/max/1600/1*pE4SEz7CprzFd7Zww-axfQ.jpeg)
+- 이진탐색트리(Binary Search Tree)와 유사, 한 노드 당 자식 노드가 2개 이상 가능 
+- key 값으로 트리 구조를 이용해 데이터 탐색 
+- 삽입,제거,탐색 모두 시간복잡도 O(logN)
+
+### 구성
+- Root Node
+- Branch Node
+- Leaf Node
+
 ### Clusterd Index, Nonclustered Index
 - Clusterd Index
     - 성능은 좋지만 테이블 당 한개만 생성 가능, 신중하게 생성해야함
@@ -28,3 +67,8 @@
         - 외래 키에 NULL 허용, 연관관계를 맺을지 말지 선택
         - NULL 허용 -> 외부 조인 사용해야함.
 - ORM 실무에서는 필수적 비식별 관계를 사용하고 기본 키는 Long 타입의 대리 키 사용을 선호
+
+
+
+## References
+- https://dzone.com/articles/database-btree-indexing-in-sqlite
