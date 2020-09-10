@@ -15,6 +15,7 @@ $ touch .bash_aliases
 $ vi .bash_aliases
 
 alias corelog="tail -f /resource/log/application/out.log"
+alias rm="rm -i"
 
 $ vi .bashrc
 
