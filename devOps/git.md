@@ -1,5 +1,13 @@
 # Git
 
+### Merge vs Rebase
+- Merge
+    - 브랜치 통합
+- Rebase
+    - 특정 위치로 base 를 옮기고 기존의 commit 재정렬
+    - Git History 깔끔해짐
+    - master 에서의 rebase 는 피하자
+
 ## Fork 저장소 Origin 저장소로 부터 Merge
 ```
 $ git remote -v # 내 저장소
