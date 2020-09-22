@@ -20,3 +20,7 @@
     - sentinel 구성하여 감시
 - hazelcast 
     - was 간 동일한 데이터 유지
+    
+    
+### tcpdump
+- sudo tcpdump host 127.0.0.1
