@@ -1,13 +1,5 @@
 # 자주 쓰는 명령어
 
-## Telnet
-### Header 조회
-```
-$ telnet www.naver.com 80
-$ GET / HTTP/1.1
-$ POST / HTTP/1.1
-```
-
 ## Bash
 ### alias
 ```
@@ -25,4 +17,22 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 source .bash_aliases
+```
+
+### tcpdump
+```
+$ sudo tcpdump host 127.0.0.1
+```
+
+### scp
+```
+$ scp -P 22 yeob@192.0.0.1:/app/data/data_20200101.tar /Users/data
+```
+
+## Telnet
+### Header 조회
+```
+$ telnet www.naver.com 80
+$ GET / HTTP/1.1
+$ POST / HTTP/1.1
 ```

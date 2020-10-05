@@ -21,5 +21,7 @@ $ docker run --name some-redis -d -p 6379:6379 redis
 # redis-cli 필요 시 
 $ docker network create redis-net
 $ docker run --name some-redis -p 6379:6379 --network redis-net -d redis redis-server --appendonly yes
+
+// cli
 $ docker run -it --network redis-net --rm redis redis-cli -h some-redis
 ```
