@@ -144,6 +144,8 @@ $ git push origin branch_name
 ```
 $ git log
 
+// HEAD^ => 헤드의 직전 위치를 의미한다. 즉, 현재 브랜치의 마지막 커밋을 뜻한다.
+
 // 커밋 취소
 // [방법 1] commit을 취소하고 해당 파일들은 staged 상태로 워킹 디렉터리에 보존
 $ git reset --soft HEAD^
