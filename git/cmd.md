@@ -52,6 +52,15 @@ $ git add 파일명
 $ git add -p (하나씩 올리기) 
 ```
 
+- commit
+```
+$ git commit -m "message"
+
+// 매번 커밋 할때마다 staging area 에 add 해줘야한다.
+// tracked 상태인 파일이 자동으로 추가되기를 원한다면 -a를 추가
+$ git commit -am "message" or git commit -a -m "message"
+```
+
 - commit 메세지 수정
 ```
 $ git commit --amend
