@@ -37,6 +37,13 @@ $ git pull origin master
 - 디렉토리 버전 상태 확인
 ```
 $ git status
+$ git status -sb // 축약 + 브랜치
+
+M : 수정된 파일
+A : 추가된 파일
+AM : 추가 및 수정 파일
+MM : Stage단계에서 수정상태인 파일
+?? : Untracked 파일
 ```
 
 - 버전 관리 시작 (stage area 에 올리기)
@@ -119,6 +126,14 @@ $ git checkout .
 
 // 추적 되지 않는 파일만 제거 , 추적 되는 파일은 제거 안됨
 $ git clean -f 
+
+// ** 아래 두가지 방법은 조심 **
+
+// 단계별 추적 및 준비되지 않은 추적 파일만 제거 
+$ git reset --hard
+
+// 모든 변경 사항 제거
+$ git stash -u
 ```
 
 ## Fork 저장소 Origin 저장소로 부터 Merge
