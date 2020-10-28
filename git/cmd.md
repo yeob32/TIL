@@ -112,6 +112,15 @@ $ git config --list
 <<<<<<<<브랜치명
 ```
 
+## 로컬 Git 변경 제거 방법
+```
+// 스테이지되지 않은 추적 파일만 제거 , 추적 되지 않은 파일은 제거 안됨
+$ git checkout .
+
+// 추적 되지 않는 파일만 제거 , 추적 되는 파일은 제거 안됨
+$ git clean -f 
+```
+
 ## Fork 저장소 Origin 저장소로 부터 Merge
 ```
 $ git remote -v # 내 저장소
