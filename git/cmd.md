@@ -79,6 +79,7 @@ $ git log --oneline --decorate --graph --all // 브랜치 커밋 히스토리
 ```
 $ git diff
 $ git diff 버전1아이디 버전2아이디 (commit log 2개 비교)
+$ git diff --staged
 ```
 
 - 이전 버전으로 되돌아가기 
