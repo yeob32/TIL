@@ -73,6 +73,7 @@ $ git log -p // 변경 코드 같이 보기
 $ git log --pretty=oneline // 이력 한줄로 보기
 $ git log --oneline --decorate  // 브랜치가 어떤 커밋을 가리키는지 확인
 $ git log --oneline --decorate --graph --all // 브랜치 커밋 히스토리
+$ git log --stat // 변경 라인 수도 같이 보여줌
 ```
 
 - 변경 코드 확인 (스테이지 올라가지 않은 코드, 즉 add 이전)
@@ -80,6 +81,7 @@ $ git log --oneline --decorate --graph --all // 브랜치 커밋 히스토리
 $ git diff
 $ git diff 버전1아이디 버전2아이디 (commit log 2개 비교)
 $ git diff --staged
+$ git diff --stat --cached origin/master // 대기 중인 커밋 목록
 ```
 
 - 이전 버전으로 되돌아가기 
