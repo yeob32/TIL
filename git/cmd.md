@@ -190,6 +190,7 @@ $ git reset --mixed HEAD^ // 기본 옵션
 $ git reset HEAD^ // 위와 동일
 $ git reset HEAD~2 // 마지막 2개의 commit을 취소
 // [방법 3] commit을 취소하고 해당 파일들은 unstaged 상태로 워킹 디렉터리에서 삭제
+// 커밋을 되돌려가며 체크 해보고 싶을 떄 -> 이 후 git pull 해서 다시 최신 헤드로 갈 수 있다.
 $ git reset --hard HEAD^
 
 
