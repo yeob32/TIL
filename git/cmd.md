@@ -157,6 +157,16 @@ $ git merge upstream/master # merge
 $ git push origin master 
 ```
 
+### 
+```
+// 원격 저장소 데이터 가져옴
+$ git fetch origin
+$ git fetch --all
+
+// 원격 저장소에서 제거된 브랜치 로컬에서 제거
+$ git fetch -prune
+```
+
 ### 파일 잘못 커밋한 경우 저장소 파일 삭제
 ```
 1. 만약 .DS_Store 을 잘못하여 커밋한 경우
