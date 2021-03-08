@@ -74,7 +74,7 @@
     - == 비교
 - 동등성
     - 동일한 정보를 담고 있는(equivalent) 오브젝트
-    - equals()
+    - equals() 메소드 비교
         - equals() 메소드 따로 구현 하지 않았다면, 최상위 클래스인 Object 클래스의 equals() 사용
             - equals() 메소드는 동일성 비교
     
