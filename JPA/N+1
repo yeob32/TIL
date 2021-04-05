@@ -1,14 +1,21 @@
 @OneToMany 관계 매핑 후
 ex) orderRepository.findAll() 수행 시 N+1 쿼리 발생
 
-해결 방안
+### 해결 방안
 - Fetch Join 
+  - inner join
 ```
   select order
   from Order order
     inner join fetch order.member as member # @ManyToOne
     left join fetch order.orderItems as orderItem; # @OneToMany
 ```
-  - 자료 구조 Set 으로 변경 
-    - 순서 보장 시 LinkedHashSet
+- @EntityGraph(attributePaths = "orderItems")
+  - outer join
+  
+#### 위 해결 방안 모두 카테시안 곱 발생
+  
+### 카테시안 곱 해결 방안
+- 자료 구조 Set 으로 변경 
+  - 순서 보장 시 LinkedHashSet
 - distinct 쿼리
