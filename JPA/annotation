@@ -1,0 +1,10 @@
+@ManyToOne
+- optional > default true
+  - true 일 경우 해당 객체에 null 삽입 가능
+  - @JoinColumn(nullable = true) 같음
+  - true 일 경우 `left join`, false 일 경우 `inner join`
+  
+@OneToMany
+- mappedBy 연관 관계 주인 설정
+  - 연관 관계의 주인은 FK 가 있는 곳으로 정한다.
+  - 주인이 아닌 쪽은 읽기만 가능하다.
