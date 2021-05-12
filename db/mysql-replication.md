@@ -67,8 +67,8 @@ $ docker-compose up -d
 - master 서버에 REPLICATION SLAVE 권한의 계정 생성
 
 ```bash
-mysql> CREATE USER 'ksy-slave'@'%' IDENTIFIED WITH mysql_native_password BY '1234';
-mysql> GRANT REPLICATION SLAVE ON _._ TO 'ksy-slave'@'%';
+mysql> CREATE USER 'ksy-repl'@'%' IDENTIFIED WITH mysql_native_password BY '1234';
+mysql> GRANT REPLICATION SLAVE ON *.* TO 'ksy-repl'@'%';
 ```
 
 #### test db 생성
