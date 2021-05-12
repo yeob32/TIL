@@ -130,7 +130,7 @@ Executed_Gtid_Set:
 
 ```sql
 # mysql-slave
-mysql> CHANGE MASTER TO MASTER_HOST='mysql-master', MASTER_USER='ksy-slave', MASTER_PASSWORD='1234', MASTER_LOG_FILE='mysql-bin.000003', MASTER_LOG_POS=3141;
+mysql> CHANGE MASTER TO MASTER_HOST='mysql-master', MASTER_USER='ksy-repl', MASTER_PASSWORD='1234', MASTER_LOG_FILE='mysql-bin.000003', MASTER_LOG_POS=3141;
 mysql> START SLAVE; ### 종료 시 STOP SLAVE;
 ```
 
@@ -149,7 +149,7 @@ mysql> SHOW SLAVE STATUS\G
 ************\*\*\************* 1. row ************\*\*\*************
 Slave_IO_State: Waiting for master to send event
 Master_Host: mysql-master
-Master_User: ksy-slave
+Master_User: ksy-repl
 Master_Port: 3306
 Connect_Retry: 60
 Master_Log_File: mysql-bin.000003
