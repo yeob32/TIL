@@ -69,6 +69,11 @@ $ docker-compose up -d
 ```bash
 mysql> CREATE USER 'ksy-repl'@'%' IDENTIFIED WITH mysql_native_password BY '1234';
 mysql> GRANT REPLICATION SLAVE ON *.* TO 'ksy-repl'@'%';
+# GRANT REPLICATION CLIENT ON *.* TO 'ksy-repl'@'%';
+# 해당 계정으로 조회 시 권한 있어야됨 show master status\G;
+
+/* 모든IP 외부접속용 */
+grant all privileges on *.* to 'ksy-repl'@'%';
 ```
 
 #### test db 생성
