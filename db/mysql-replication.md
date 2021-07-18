@@ -22,15 +22,15 @@ $ docker run -d --name mysql-slave -p 3307:3306 -itd --network ref-net -e MYSQL_
 # docker-compose.yml
 
 version: "3" # 파일 규격 버전
-services: # 이 항목 밑에 실행하려는 컨테이너 들을 정의
-  mysql-master: # 서비스 명
-    image: mysql:8.0.17 # 사용할 이미지
-    container_name: mysql-master # 컨테이너 이름 설정
+services: 
+  mysql-master: 
+    image: mysql:8.0.17 
+    container_name: mysql-master 
     ports:
-      - "13306:3306" # 접근 포트 설정 (컨테이너 외부:컨테이너 내부)
-    environment: # -e 옵션
-      MYSQL_ROOT_PASSWORD: "1234" # MYSQL 패스워드 설정 옵션
-    command: # 명령어 실행
+      - "3306:3306" # (컨테이너 외부:컨테이너 내부)
+    environment:
+      MYSQL_ROOT_PASSWORD: "1234"
+    command:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
     restart: "always"
@@ -41,7 +41,7 @@ services: # 이 항목 밑에 실행하려는 컨테이너 들을 정의
     image: mysql:8.0.17
     container_name: mysql-slave
     ports:
-      - "23306:3307"
+      - "3307:3306"
     environment:
       MYSQL_ROOT_PASSWORD: "1234"
     command:
