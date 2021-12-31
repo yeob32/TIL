@@ -39,6 +39,12 @@ $ POST / HTTP/1.1
 
 ## Linux Command
 ```
+// pbcopy & pbpaste
+$ pbcopy < ~/.ssh/id_rsa.pub
+$ echo "hello" | pbcopy
+$ pbpaste
+$ pbpaste > hello.txt
+
 // 명령어 사용법 조회
 $ man grep 
 $ man ab
