@@ -47,6 +47,9 @@ $ source ~/.zshrc
 $ brew install zsh-autosuggestions
 $ echo "source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc # autosuggestions 설치 후 설정
 $ source ~/.zshrc # 설정 적용
+
+m1
+$ echo "source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 ```
 
 ### syntax highlighter 
