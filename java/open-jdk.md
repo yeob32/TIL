@@ -27,3 +27,6 @@ OpenJDK는 자바 플랫폼, 스탠더드 에디션 의 자유-오픈 소스 구
 
 ### considerations JDK vendor
 ![considerations_jdk_vendor](https://i.stack.imgur.com/unKsY.png)
+
+### references
+- https://stackoverflow.com/questions/52431764/difference-between-openjdk-and-adoptium-adoptopenjdk
