@@ -1,6 +1,6 @@
 # OpenJDK
 
-OpenJDK는 자바 플랫폼, 스탠더드 에디션 의 자유-오픈 소스 구현체이다. 이것은 썬 마이크로시스템즈가 2006년에 시작한 노력의 산물이다. 구현체의 라이선스는 링크 예외가 있는 GNU GPL 버전 2이다.
+OpenJDK는 자바 플랫폼, 스탠더드 에디션 의 자유-오픈 소스 구현체이다.
 
 ### OpenJDK Providers and Comparison
 
