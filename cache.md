@@ -1,8 +1,12 @@
 # 캐시
 
-- cache hit
+#### Hot key
+- 자주 참조되거나 수정될 수 있는 key
+- 주로 sharding 시 RDBMS, key-value NoSQL 등에서 많이 참조되는 key,record
+  - sharding 시 key 의 분배가 개수적으로잘 이루어져도 해당 key 가 자주 참조 되기 때문에 불균형 문제 발생 가능
+####  cache hit
   - 캐싱된 데이터가 있을 경우 바로 가져옴
-- cache miss
+#### cache miss
   - 캐싱된 데이터가 없을 경우 DB에서 가져옴
 
 ### 주의 사항
@@ -69,9 +73,34 @@
 #### Read Through + Write Around
 - 데이터를 DB 에 저장하고 데이터를 가져올 때 항상 캐시에서 DB 를 조회하므로 데이터 일관성 보장 가능
 
-### Cache Stampede
+## Cache Stampede
 
-- 대규모 트래픽 환경에서 TTL 값을 너무 작게 설정할 시 발생 가능
+- 캐시 만료로 인해 많은 데이터 조회 요청이 갑자기 DB 로 몰리는 현상
 - 키가 만료되는 순간 많은 트래픽 요청이 있다면 모든 애플리케이션에서 DB 를 조회하게 되어 duplicate read 발생
 - 또한 읽어들인 값을 동시에 캐시에 쓰게 될 때 duplicate write 발생
-  - 불필요한 작업으로 성능 저하 유발 
+  - 불필요한 작업으로 성능 저하 유발
+
+### 해결 방안
+#### 주기적인 Batch 작업을 통한 key 갱신
+- 특정 Hot key 목록을 만들어두고 해당 key 는 TTL 을 설정하지 않고 DB 로 부터 주기적으로 갱신
+- 장점
+  - 만료가 되지 않음을 보장
+  - Cache Stampede 가 발생하지 않도록 확실하게 방지
+- 단점
+  - 추가적인 Batch 프로세스 구현 필요
+  - Hot key 관리 포인트 증가
+#### Lazy Loading (Cache Miss) 이 발생하는 경우 Lock 을 사용
+- Cache Miss 가 발생하여 DB 를 직접 조회해야할 때 Lock 을 활용할 수 있음
+- Lock 을 획득하지 못한 요창은 해당 요청이 끝날때까지 대기
+- 장점
+  - 중복 조회,수정 발생 방지
+- 단점
+  - 캐시 만료 시 요청들이 Lock 획득을 위해 대기해야하기 때문에 병목 발생 가능성
+#### Probabilistic Early Expiration (PER)
+- 확률적 알고리즘을 활용하여 TTL 만료 전에 재갱신
+- 장점
+  - TTL 만료 자체를 연장할 수 있기 떄문에 연장이 지속적으로 이루어진다면 만료 시 생길 수 있는 문제를 완벽하게 해결 가능
+  - Hot key 라면 재갱신 확률이 자동적으로 높아지기 때문에 별도로 Hot key 를 관리할 필요가 없음
+- 단점
+  - 확률적으로 갱신하기 때문에 최악의 경우 TTL 에 도달하여 Cache Stampede 발생 가능
+  - 최악의 경우를 대비하여 미리 부하테스트를 진행해야하고 적절한 확률상수 등을 정해야한다.
