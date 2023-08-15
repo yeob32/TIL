@@ -1,5 +1,7 @@
 # Rate Limit
 
+
+## Rate Limit
 - 특정 임계치까지만 클라이언트의 요청을 허용하는 정책
 - 과도한 트래픽으로부터 서비스의 안정성을 보장해준다. 가용성 확보
 - 외부 사용자의 요청이라면 API Gateway 또는 LB 에서 → Rate Limit 체크 후 Application
