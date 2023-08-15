@@ -23,7 +23,7 @@
     - 특정 위치로 base 를 옮기고 기존의 commit 재정렬
     - Git History 깔끔해짐
     - master 에서의 rebase 는 피하자
-    
+
 ### Squash and Merge
 ```
 $ git checkout devlop
@@ -43,15 +43,15 @@ $ git rebase -i origin/master
 
 ## Git Flow 전략에서의 Merge
 - develop - feature 브렌치간 머지
-    - Squash and Merge 가 유용하다. 
+    - Squash and Merge 가 유용하다.
     - feature 의 복잡하고 지저분한 커밋 히스토리를 모두 묶어 완전 새로운 커밋으로 develop 브렌치에 추가하여, develop 브렌치에서 독자적으로 관리할 수 있기 때문
     - 일반적으로 머지 후에 feature 브렌치를 삭제해버리는 점을 떠올려 보면, feature 브렌치의 커밋 히스토리를 모두 develop 브렌치에 직접 연관 지어 남길 필요가 없다.
 - master - develop 브렌치간 머지
-    - Rebase and Merge가 유용합니다. 
+    - Rebase and Merge가 유용합니다.
     - develop의 내용을 master에 추가할 때에는 별도의 새로운 커밋을 생성할 이유가 없기 때문
-- hotfix - develop, hotfix - master 브렌치간 머지 
-    - Merge 또는 Squash and Merge 모두 유용합니다. 
-    - 때에 따라 골라 사용하면 좋을 것 같다. 
+- hotfix - develop, hotfix - master 브렌치간 머지
+    - Merge 또는 Squash and Merge 모두 유용합니다.
+    - 때에 따라 골라 사용하면 좋을 것 같다.
     - hotfix 브렌치 작업의 각 커밋 히스토리가 모두 남아야 하는 경우 Merge, 필요 없는 경우 Squash and Merge 를 사용하면 된다.
 
 ## References

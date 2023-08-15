@@ -15,14 +15,14 @@
     left join fetch order.orderItems as orderItem; # @OneToMany
 ```
 - @EntityGraph(attributePaths = "orderItems")
-  - outer join
-  
+    - outer join
+
 ### 위 해결 방안 모두 카테시안 곱 발생
 - 위의 해결 방안 모두 카테시간 곱이 발생한다.
-  
+
 #### 해결 방안
-- 자료 구조 Set 으로 변경 
-  - 순서 보장 시 LinkedHashSet
+- 자료 구조 Set 으로 변경
+    - 순서 보장 시 LinkedHashSet
 - distinct 쿼리
 
 ### 페이징 처리

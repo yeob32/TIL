@@ -1,7 +1,7 @@
 # command
 
 ## 저장소 관리
-- 기본 사용법 
+- 기본 사용법
 ```
 $ mkdir ~/MyProject                  => 작업 디렉토리 생성
 $ cd ~/myproject                     => 디렉토리로 들어가서
@@ -84,7 +84,7 @@ $ git diff --staged
 $ git diff --stat --cached origin/master // 대기 중인 커밋 목록
 ```
 
-- 이전 버전으로 되돌아가기 
+- 이전 버전으로 되돌아가기
 ```
 $ git reset --hard 버전아이디 (현재 로그 삭제하고 돌아간다) -- 위험
 $ git revert 버전아이디 (새로운 버전을 만들고 돌아간다)
