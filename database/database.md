@@ -7,7 +7,7 @@
 | Relation DB      | 	Mysql, Oralcle, MSSQL, PostgreSQL | 	ACID Transaction 제공<br>데이터 정합성<br>정규화                                                            |                                         |
 | Document DB      | 	MongoDB, CouchDB                  | 	Collection - Table<br>Document - Row <br> 데이터 분산 처리 용이 (분산은 곧 복제)<br>수평 확장 용이 <br> 입출력 용이<br> 데이터 일관성 부족 |                                         |
 | Key-Value DB     | 	Redis                             | 		                                                                                                | 자주 쓰는 데이터 캐싱                            |
-| Colomn-family DB | 	cassandra, Hbase                  | 	rdb 랑 비슷한데 row 다다 컬럼 상이<br>일반적으로 정규화 안함<br>데이터 분산 처리 용이 (분산은 곧 복제)<br>입출력 용이<br>데이터 일관성 부족       
+| Colomn-family DB | 	cassandra, Hbase                  | 	rdb 랑 비슷한데 row 다다 컬럼 상이<br>일반적으로 정규화 안함<br>데이터 분산 처리 용이 (분산은 곧 복제)<br>입출력 용이<br>데이터 일관성 부족       |
 | Graph DB         | 	neo4j                             | 		                                                                                                | 비행기 노선<br>SNS 친구 관계<br>코로나 전염맵<br>추천서비스 |
 | Search Engine    | 	ElasticSearch                     |                                                                                                   |                                         |
 
